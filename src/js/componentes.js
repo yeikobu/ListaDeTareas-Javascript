@@ -6,6 +6,7 @@ const txtInput = document.querySelector('.new-todo');
 const btnBorrarCompletados = document.querySelector('.clear-completed'); 
 const ulFiltros = document.querySelector('.filters');
 const anchorFiltros = document.querySelectorAll('.filtro'); //anchor se refiere al tag de <a> en html
+const cantadorPendientes = document.querySelector('.todo-count');  //**PENDIENTE */
 
 //Referencias en el HTML
 export const crearTodoHtml = (todo) => {
@@ -16,7 +17,6 @@ export const crearTodoHtml = (todo) => {
         <label>${todo.tarea}</label>
         <button class="destroy"></button>
     </div>
-    <input class="edit" value="Create a TodoMVC template">
     </li>`;
 
     const div = document.createElement('div'); //este div encerrará todo el html de htmlTodo
@@ -26,6 +26,7 @@ export const crearTodoHtml = (todo) => {
 
     return div.firstElementChild;
 }
+console.log(divTodoList);
 
 
 //Eventos
@@ -77,14 +78,14 @@ ulFiltros.addEventListener('click', (event)=> {
     if(!filtro) { //Diferente de filtro = undefined
         return;
     }
-
     anchorFiltros.forEach(elem => elem.classList.remove('selected'));
     event.target.classList.add('selected');
-
+    
     for(const elemento of divTodoList.children) {
+        
         elemento.classList.remove('hidden');
         const completado = elemento.classList.contains('completed');
-
+        
         switch(filtro) {
             case 'Pendientes':
                 if(completado){
@@ -101,3 +102,9 @@ ulFiltros.addEventListener('click', (event)=> {
     }
 
 });
+
+
+
+
+
+
