@@ -1,12 +1,12 @@
-import { Todo } from "../classes";
-import { todoList } from "../index"
+import { Todo, TodoList } from "../classes";
+import { todoList } from "../index";
 
 const divTodoList = document.querySelector('.todo-list');
 const txtInput = document.querySelector('.new-todo'); 
 const btnBorrarCompletados = document.querySelector('.clear-completed'); 
 const ulFiltros = document.querySelector('.filters');
 const anchorFiltros = document.querySelectorAll('.filtro'); //anchor se refiere al tag de <a> en html
-const cantadorPendientes = document.querySelector('.todo-count');  //**PENDIENTE */
+const contadorPendientes = document.querySelector('.todo-count');  //**PENDIENTE */
 
 //Referencias en el HTML
 export const crearTodoHtml = (todo) => {
@@ -26,7 +26,6 @@ export const crearTodoHtml = (todo) => {
 
     return div.firstElementChild;
 }
-console.log(divTodoList);
 
 
 //Eventos
@@ -56,6 +55,9 @@ divTodoList.addEventListener('click', (event) => {
         todoList.eliminarTodo(todoId);
         divTodoList.removeChild(todoElemento);
     }
+
+    
+
 });
 
 btnBorrarCompletados.addEventListener('click', () => {
@@ -102,6 +104,9 @@ ulFiltros.addEventListener('click', (event)=> {
     }
 
 });
+
+
+
 
 
 

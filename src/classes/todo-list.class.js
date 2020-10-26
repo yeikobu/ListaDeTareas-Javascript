@@ -32,6 +32,15 @@ export class TodoList {
 
     }
 
+    pendientes() {
+        let pendientes = 0;
+        for(const todo of this.todos) {
+            if(todo.completado == false) {
+                pendientes++;
+            }
+        }
+    }
+
     eliminarCompletados() {
         
         this.todos = this.todos.filter(todo => !todo.completado); //Obtenemos todos los que NO están completados
@@ -56,5 +65,7 @@ export class TodoList {
 
         this.todos = (localStorage.getItem('todo')) ? JSON.parse(localStorage.getItem('todo')) : []; //Todo el código de la condición de arriba, está simplificada con esta operación ternaria
         this.todos = this.todos.map(obj => Todo.fromJson(obj)); //Todo es una propiedad estática y no cambia, por eso empieza con mayúscula.
+        
     }
 }
+

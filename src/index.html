@@ -5,17 +5,17 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>To do list</title>
 	</head>
+
 	<body>
 
 		<section class="todoapp">
 			<header class="header">
-				<h1>To Do List</h1>
+				<h1>Lista de tareas</h1>
 				<input class="new-todo" placeholder="Agrega una tarea" autofocus>
 			</header>
 
 			<section class="main">
-				<input id="toggle-all" class="toggle-all" type="checkbox">
-				<label for="toggle-all">Mark all as complete</label>
+				<input class="toggle-all" type="checkbox">
 				<ul class="todo-list">
 
 					<!--Aquí se agregarán las tareas-->
@@ -24,7 +24,7 @@
 			</section>
 
 			<footer class="footer">
-				<span class="todo-count"><strong>0</strong> pendiente</span>
+				<span class="todo-count">Filtrar por: </span>
 				<ul class="filters">
 					<li>
 						<a class="selected filtro" href="#/">Todos</a>
@@ -36,10 +36,10 @@
 						<a class="filtro" href="#/completed">Completados</a>
 					</li>
 				</ul>
-				<!-- Hidden if no completed items are left ↓ -->
 				<button class="clear-completed">Borrar completados</button>
 			</footer>
 		</section>
         
 	</body>
+
 </html>
