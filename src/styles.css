@@ -27,6 +27,14 @@ body {
 	font-weight: 300;
 }
 
+:focus {
+	outline: 0;
+}
+
+.hidden {
+	display: none;
+}
+
 .todoapp {
 	background: #fff;
 	margin: 130px 0 40px 0;
@@ -90,6 +98,28 @@ body {
 	right: 100%;
 	bottom: 100%;
 } 
+
+.toggle-all + label {
+	width: 60px;
+	height: 34px;
+	font-size: 0;
+	position: absolute;
+	top: -52px;
+	left: -13px;
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+.toggle-all + label:before {
+	content: '❯';
+	font-size: 22px;
+	color: #e6e6e6;
+	padding: 10px 27px 10px 27px;
+}
+
+.toggle-all:checked + label:before {
+	color: #737373;
+}
 
 .todo-list {
 	margin: 0;
@@ -182,6 +212,26 @@ body {
 	transition: color 0.2s ease-out;
 }
 
+.todo-list li .destroy:hover {
+	color: #af5b5e;
+}
+
+.todo-list li .destroy:after {
+	content: '×';
+}
+
+.todo-list li:hover .destroy {
+	display: block;
+}
+
+.todo-list li .edit {
+	display: none;
+}
+
+.todo-list li.editing:last-child {
+	margin-bottom: -1px;
+}
+
 .footer {
 	padding: 10px 15px;
 	height: 20px;
@@ -240,3 +290,5 @@ body {
 .clear-completed:hover {
 	text-decoration: underline;
 }
+
+
