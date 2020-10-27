@@ -1,13 +1,3 @@
 #Webpack Starter
 
-Este es el proyecto incial para crear futuras aplicaciones utilizando webpack.
-
-### Notas:
-Recordar reconstruir los módulos de Node:
-```
-npm install 
-```
-Y para construir el build :
-```
-npm run build
-```
+Proyecto personal con lo que he aprendido de HTML, CSS y Javascript hasta el momento en conjunto con webpack
